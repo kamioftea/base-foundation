@@ -1,0 +1,6 @@
+/public/fonts
+/public/scripts
+/public/styles
+/node_modules
+/bower_components
+*.log

@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+// Foundation Sass Utilities
+@import 'util/util';
+
+@import 'settings';
+@import 'foundation';
+@import "font-awesome";
+
+@include foundation-global-styles;
+@include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;

@@ -1,0 +1,28 @@
+{
+  "name": "base-foundation",
+  "version": "1.0.0",
+  "authors": [
+    "Jeff Horton <jeff.goblinoid.co.uk>"
+  ],
+  "description": "A seed for new front-end web development projects",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamioftea/base-foundation"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "zurb/foundation-sites-6",
+    "components-font-awesome": "~4",
+    "handlebars": "~4.0.4",
+    "react": "~0.14.2",
+    "highland": "~2.5.1"
+  },
+  "private": true
+}
