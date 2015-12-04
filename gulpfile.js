@@ -17,11 +17,8 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var reactify = require('reactify');
-var watchify = require('watchify');
 
 var paths = require('./paths.js');
-
-console.log(paths);
 
 function getFolders(dir) {
 	return fs.readdirSync(dir)
