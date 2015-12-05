@@ -22,5 +22,7 @@ module.exports = {
 		'./bower_components/components-font-awesome/fonts/*'
 	],
 	fonts_list:          './assets/font.list',
-	fonts_destination:   './public/fonts'
+	fonts_destination:   './public/fonts',
+	images:              './assets/images/**/*.{png,gif,jpg}',
+	images_destination:  './public/images'
 };

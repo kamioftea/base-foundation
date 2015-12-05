@@ -1,6 +1,7 @@
 /public/fonts
 /public/scripts
 /public/styles
+/public/images
 /node_modules
 /bower_components
 *.log

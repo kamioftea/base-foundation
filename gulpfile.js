@@ -17,6 +17,8 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var reactify = require('reactify');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 var paths = require('./paths.js');
 
@@ -78,6 +80,15 @@ gulp.task('scripts', function () {
 	return merge(modules, core_scripts);
 });
 
+gulp.task('images', function(){
+	return gulp.src(paths.images)
+		.pipe(imagemin({
+			progressive: true,
+			use: [pngquant()]
+		}))
+		.pipe(gulp.dest(paths.images_destination));
+});
+
 gulp.task('react', function () {
 	return browserify(paths.scripts_react_source)
 			.transform(reactify)
@@ -89,12 +100,14 @@ gulp.task('react', function () {
 			.pipe(gulp.dest(paths.scripts_destination));
 });
 
-gulp.task('build', ['styles', 'scripts', 'react', 'fonts']);
+gulp.task('build', ['styles', 'scripts', 'react', 'fonts', 'images']);
 
 gulp.task('watch', ['build'], function () {
 	gulp.watch(paths.styles.concat(paths.styles_includes), ['styles']);
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(path.join(paths.scripts_folder_root, '/**/*.js'), ['scripts']);
+	gulp.watch(paths.scripts_react_source, ['react']);
+	gulp.watch(paths.images, ['images']);
 });
 
 gulp.task('default', ['watch']);
